@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product Live Service Bus Documentation</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js//respond.min.js"></script>
+    <![endif]-->
+
+    <script src="js/sigma.min.js"></script>
+    <script src="js/plugins/sigma.parsers.json.min.js"></script>
+
+    <script src="js/run_prettify.js"></script>
+
+    <style>
+        body { padding-top: 70px; }
+    </style>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Product-Live</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#Documentation">Documentation <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#FAQ">FAQ</a></li>
+                </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type=Data.DATA_TYPE.TEXT class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="container">
+        <!-- Jumbotron -->
+        <div class="jumbotron">
+            <h1>Bienvenue!</h1>
+            <p>Ici vous trouverez tout pour vous connecter rapidement à Product Live Service Bus.</p>
+            <p><a class="btn btn-primary btn-lg" href="#Documentation" role="button">Commencer</a></p>
+        </div>
+
+        <!--home -->
+
+        <!-- php doc -->
+        <div id="phpDoc">
+            <div class="page-header">
+                <h1>Gestion du système point à point</h1>
+            </div>
+            <div style="width: 100%; text-align: center;">
+                <img src="images/bus.jpg"/>
+            </div>
+            <div>
+                <h2>Les nodes</h2>
+                <p>
+                    Un node est l'image dans Product-Live d'un de vos systèmes d'informations.<br>Il peut représenter un <b>ERP</b>, un <b>PLM</b>, un <b>site web</b>, une <b>marketplace</b> ou <b>n'importe quel outil</b> dans lequel vous stocker de la donnée produit.
+                </p>
+                <h2>4 flux à mapper par node</h2>
+                <p>
+                    Chaque node est composé de 4 flux. Les 4 flux sont les suivants:
+                    <ul>
+                        <li>Matrix</li>
+                        <li>Families</li>
+                        <li>Contacts</li>
+                        <li>Products</li>
+                    </ul>
+                    Les flux sont envoyés au Service Bus sous forme de message au format <b>JSON</b>.
+                </p>
+                <h2>Le flux "Matrix"</h2>
+                <p>
+                    Le flux <b>matrix</b> représente la <b>structuration de vos données dans votre système</b>. Ce message doit uniquement être transmis à l'initialisation puis chaque fois que vous modifiez la structure de votre système.
+                    Le message standard à transmettre est de ce type :
+                </p><button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#matrixCollapse" aria-expanded="false" aria-controls="matrixCollapse" style="float: right;margin-left: 10px;">
+                    Afficher / Cacher message standard
+                </button>
+                <div class="collapse" id="matrixCollapse">
+                    <pre class="prettyprint lang-js">
+
+    matrix = {
+        apiVersion: "1.0",  // La version de l'api que vous utilisez
+        idNode = "testNode", // Le nom du node sur lequel vous agissez
+        marketing: [
+            {
+                idName: "name",
+                displayName: [
+                    {
+                        name: "Nom",
+                        lang: 4  //Enum 4  //Enum Data.LANG.FR
+                    }
+                ]
+                required: true,
+                dataType: 5  //Enum Data.DATA_TYPE.TEXT
+            },
+            {
+                idName: "short_description",
+                displayName:  [
+                    {
+                        name: "Description courte",
+                        lang: 4  //Enum Data.LANG.FR
+                    }
+                ],
+                required: true,
+                dataType: 6 //Enum Data.DATA_TYPE.RICHTEXT
+            },
+            {
+                idName: "long_description",
+                displayName: [
+                    {
+                        name: "Description longue",
+                        lang: 4  //Enum Data.LANG.FR
+                    }
+                ],
+                required: true,
+                dataType: 6 //Enum Data.DATA_TYPE.RICHTEXT
+            }
+        ],
+        pivots: [
+            {
+                idName: "color",
+                displayName: [
+                    {
+                        name: "Couleur",
+                        lang: 4  //Enum Data.LANG.FR
+                    }
+                ],
+                dataType: 10, //Enum Data.DATA_TYPE.SINGLEOPTION
+                values: [
+                    {
+                        idName: "red",
+                        displayName: [
+                            {
+                                name: "Rouge",
+                                lang: 4  //Enum Data.LANG.FR
+                            }
+                        ],
+                        code: "102",
+                        htmlCode: "00ff00",
+                        urlImage: ""
+                    },
+                    {
+                        idName: "green",
+                        displayName: [
+                            {
+                                name: "Vert",
+                                lang: 4  //Enum Data.LANG.FR
+                            }
+                        ],
+                        code: "104",
+                        htmlCode: "0000ff",
+                        urlImage: ""
+                    }
+                ]
+            },
+            {
+                idName: "size",
+                displayName: [
+                    {
+                        name: "Taille",
+                        lang: 4  //Enum Data.LANG.FR
+                    }
+                ],
+                dataType: 10, //Enum Data.DATA_TYPE.SINGLEOPTION
+                values: [
+                    {
+                        idName: "34",
+                        displayName: [
+                            {
+                                name: "34",
+                                lang: 4  //Enum Data.LANG.FR
+                            }
+                        ]
+                    },
+                    {
+                        idName: "35",
+                        displayName: [
+                            {
+                                name: "35",
+                                lang: 4  //Enum Data.LANG.FR
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        features: [
+            {
+                idName: "main_composition",
+                displayName: [
+                    {
+                        name: "Composition principale",
+                        lang: 4  //Enum Data.LANG.FR
+                    }
+                ],
+                dataType: 10, //Enum Data.DATA_TYPE.SINGLEOPTION
+                values: [
+                    {
+                        idName: "polyester",
+                        displayName: [
+                            {
+                                name: "Polyester",
+                                lang: 4  //Enum Data.LANG.FR
+                            }
+                        ]
+                    },
+                    {
+                        idName: "wool",
+                        displayName: [
+                            {
+                                name: "Laine",
+                                lang: 4  //Enum Data.LANG.FR
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+                    </pre>
+                </div>
+                <h2>Le flux "Families"</h2>
+                <p>
+                    Le flux <b>families</b> représente les <b>catégories et les caratctéristiques associées</b> de votre système.
+                    C'est généralement le menu de votre site web ou votre thésorus. Pour les caractéristiques associées vous pouvez ici rendre obligatoire une caractéristique pour une catégorie donnée. Vous pouvez également vous servir de l'interfaçe pour faire ce lien.
+                    <br>
+                    Ce message doit uniquement être transmis à l'initialisation puis chaque fois que vous modifiez la structure de votre système.
+                    Le message standard à transmettre est de ce type :
+                </p>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#familiesCollapse" aria-expanded="false" aria-controls="familiesCollapse" style="float: right;margin-left: 10px;">
+                    Afficher / Cacher message standard
+                </button>
+                <div class="collapse" id="familiesCollapse">
+                    <pre class="prettyprint lang-js">
+
+    families: {
+        apiVersion: "1.0",  // La version de l'api que vous utilisez
+        idNode: "testNode", // Le nom du node sur lequel vous agissez
+        families: [
+            {
+                idName: "homme",
+                idNameParent: "",
+                displayName: [
+                    {
+                        name: "Homme",
+                        lang: 4  //Enum Data.LANG.FR
+                    }
+                ]
+            },
+            {
+                idName: "coats",
+                idNameParent: "homme",
+                displayName: [
+                    {
+                        name: "Blousons",
+                        lang: 4  //Enum Data.LANG.FR
+                    }
+                ],
+                features: [
+                    idName: "main_composition"
+                ]
+            }
+        ]
+    }
+                    </pre>
+                </div>
+                <h2>Le flux "Contact"</h2>
+                <p>
+                    Le flux <b>contact</b> représente <b>un fournisseur, une marque ou un distributeur</b>.
+                    <br>
+                    Ce message doit uniquement être transmis à l'initialisation puis chaque fois que vous modifiez la structure de votre système.
+                    Le message standard à transmettre est le suivant :
+                </p>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#contactCollapse" aria-expanded="false" aria-controls="contactCollapse" style="float: right;margin-left: 10px;">
+                    Afficher / Cacher message standard
+                </button>
+                <div class="collapse" id="contactCollapse">
+                    <pre class="prettyprint lang-js">
+
+    contact: {
+        idNode: "testNode", // Le nom du node sur lequel vous agissez
+        idContact: "87686",
+        plType: Data.CONTACT_TYPE.SUPPLIER,
+        displayName: {
+            name: "Premier fournisseur",
+            lang: 4  //Enum Data.LANG.FR
+        },
+        urlImage: "",
+        emails: [
+            "contact@premier-fournisseur.com"
+        ],
+        phones: [
+            "09 09 67 78 89"
+        ],
+        isActive: true
+    }
+                    </pre>
+                </div>
+
+                <h2>Le flux "Product"</h2>
+                <p>
+                    Le flux <b>product</b> représente <b>un produit d'un de vos système</b>.
+                    <br>
+                    Ce type de message est à envoyer à chaque fois qu'un produit est modifié sur votre système.
+                    Le message standard à transmettre est le suivant :
+                </p>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#productCollapse" aria-expanded="false" aria-controls="productCollapse" style="float: right;margin-left: 10px;">
+                    Afficher / Cacher message standard
+                </button>
+                <div class="collapse" id="productCollapse">
+                    <pre class="prettyprint lang-js">
+
+    product : {
+        apiVersion: "1.0",  // La version de l'api que vous utilisez
+        idPL: "1876876",
+        lastUpdateDatePl: "6757576775",
+        nodes: [
+            {
+                idNode: "testNode", // Le nom du node sur lequel vous agissez
+                families: [
+                    {
+                        idName: "homme",
+                        idNameParent: "",
+                        displayName: [
+                            {
+                                name: "Homme",
+                                lang: 4  //Enum Data.LANG.FR
+                            }
+                        ]
+                    }
+                ]
+                model: {
+                    idModel: "8768768",
+                    identifications: [
+                        {
+                            plStrategyName: "sku",
+                            plType: Data.IDENTIFICATION_TYPE.INTERNAL,
+                            value: "34543"
+                        }
+                    ],
+                    marketing: [
+                        {
+                            idName: "name",
+                            value: "Chaussure de ville"
+                        },
+                        {
+                            idName: "short_description",
+                            value: "Une super chaussure pour la ville."
+                        }
+                    ]
+                },
+                combinations: [
+                    {
+                        idCombination: "6757565",
+                        identifications: [
+                            {
+                                plStrategyName: "ean",
+                                plType: Data.IDENTIFICATION_TYPE.INTERNAL,
+                                value: "1765751757765"
+                            },
+                            {
+                                plStrategyName: "sku",
+                                plType: Data.IDENTIFICATION_TYPE.INTERNAL,
+                                value: "34543-45-MM"
+                            }
+                        ],
+                        pivots: [
+                            {
+                                idName: "color",
+                                value: "red"
+                            },
+                            {
+                                idName: "size",
+                                value: "34"
+                            }
+                        ],
+                        features: [
+                            {
+                                idName: "main_composition",
+                                value: "wool"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+                    </pre>
+                </div>
+            </div>
+            <div class="page-header">
+                <h1>Connexion à l'aide de PHP <small>Objectif 30 minutes par Node.</small></h1>
+            </div>
+            <div>
+                <h2>Récupération du projet</h2>
+                <p>
+                    <a href="http://git-scm.com/book/en/v2/Getting-Started-Installing-Git">1- Installer GIT</a>
+                    <div class="alert alert-info" role="alert">Sous Windows, vous devez aussi ajouter l'exécutable Git à votre variable d'environnement PATH.</div>
+                </p>
+                <p>
+                    2- Télécharger le wrapper pour le language PHP <a href="https://github.com/crousti/ProductLivePHPWrapper">ici</a>, ou en ligne de commande :
+                </p>
+                <pre>
+
+    git clone https://github.com/crousti/ProductLivePHPWrapper.git
+                </pre>
+                <div class="alert alert-warning" role="alert"><strong>Vérification!</strong> Il faut que PDO et OpenSSL soient activés sur votre serveur PHP.</div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Bind the event.
+            $(window).on('hashchange', function(e){
+                locationHashChanged();
+            });
+        });
+
+        function locationHashChanged() {
+            if (location.hash === "#Documentation") {
+                console.log('helllo');
+            }
+        }
+    </script>
+
+    <script>
+        sigma.parsers.json('data/data.json', {
+            container: 'container',
+            settings: {
+                defaultNodeColor: '#ec5148'
+            }
+        });
+    </script>
+</body>
+</html>
