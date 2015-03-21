@@ -101,7 +101,7 @@
                 <div class="collapse" id="matrixCollapse">
                     <pre class="prettyprint lang-js">
 
-    matrix = {
+    {
         apiVersion: "1.0",  // La version de l'api que vous utilisez
         idNode = "testNode", // Le nom du node sur lequel vous agissez
         marketing: [ // Dans le bloc marketing on retrouve les champs de titre et de descriptions
@@ -256,7 +256,7 @@
                 <div class="collapse" id="familiesCollapse">
                     <pre class="prettyprint lang-js">
 
-    families: {
+    {
         apiVersion: "1.0",  // La version de l'api que vous utilisez
         idNode: "testNode", // Le nom du node sur lequel vous agissez
         families: [
@@ -288,9 +288,9 @@
     }
                     </pre>
                 </div>
-                <h2>Le flux "Contact"</h2>
+                <h2>Le flux "Contacts"</h2>
                 <p>
-                    Le flux <b>contact</b> représente <b>un fournisseur, une marque ou un distributeur</b>.
+                    Le flux <b>contacts</b> représente <b>un fournisseur, une marque ou un distributeur</b>.
                     <br>
                     Ce message doit uniquement être transmis à l'initialisation puis chaque fois que vous modifiez la structure de votre système.
                     Le message standard à transmettre est le suivant :
@@ -301,22 +301,27 @@
                 <div class="collapse" id="contactCollapse">
                     <pre class="prettyprint lang-js">
 
-    contact: {
+    {
         idNode: "testNode", // Le nom du node sur lequel vous agissez
-        idContact: "87686", // L'id de ce contact dans votre système
-        plType: 0, // Enum Data.CONTACT_TYPE.SUPPLIER
-        displayName: {
-            name: "Premier fournisseur",
-            lang: 4  // Enum Data.LANG.FR
-        },
-        urlImage: "",
-        emails: [
-            "contact@premier-fournisseur.com"
-        ],
-        phones: [
-            "09 09 67 78 89"
-        ],
-        isActive: true
+        contacts: [
+             {
+                idContact: "87686", // L'id de ce contact dans votre système
+                plType: 0, // Enum Data.CONTACT_TYPE.SUPPLIER
+                displayName: {
+                    name: "Premier fournisseur",
+                    lang: 4  // Enum Data.LANG.FR
+                },
+                urlImage: "",
+                emails: [
+                    "contact@premier-fournisseur.com"
+                ],
+                phones: [
+                    "09 09 67 78 89"
+                ],
+                isActive: true
+            }
+        ]
+
     }
                     </pre>
                 </div>
