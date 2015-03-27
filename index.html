@@ -102,8 +102,6 @@
                     <pre class="prettyprint lang-js">
 
     {
-        apiVersion: "1.0",  // La version de l'api que vous utilisez
-        idNode = "testNode", // Le nom du node sur lequel vous agissez
         marketing: [ // Dans le bloc marketing on retrouve les champs de titre et de descriptions
             {
                 idName: "name", // C'est l'id de ce champ dans votre sytème
@@ -257,8 +255,6 @@
                     <pre class="prettyprint lang-js">
 
     {
-        apiVersion: "1.0",  // La version de l'api que vous utilisez
-        idNode: "testNode", // Le nom du node sur lequel vous agissez
         families: [
             {
                 idName: "homme",
@@ -302,7 +298,6 @@
                     <pre class="prettyprint lang-js">
 
     {
-        idNode: "testNode", // Le nom du node sur lequel vous agissez
         contacts: [
              {
                 idContact: "87686", // L'id de ce contact dans votre système
@@ -340,23 +335,28 @@
                     <pre class="prettyprint lang-js">
 
     {
-        apiVersion: "1.0",  // La version de l'api que vous utilisez
-        lastUpdateDatePl: "6757576775", // La date de la dernière mise à jour dans Product-Live
-        lastViewDate: "9987979799", // La date du dernier passage de votre système sur ce produit
         identifications: {  // Ce sont toutes les clés d'identification produit
             model: {
                 idModelPl: "8768768",    // C'est l'id de ce model dans Product-Live
                 identificationsStrategies: [    // Ce sont les différents codes d'identification produits au modèle
                     {
-                        plStrategyName: "sku",
+                        plStrategyName: "productCode",
                         plType: 0,  //Data.IDENTIFICATION_TYPE.INTERNAL
                         value: "34543"
+                    },
+                    {
+                        plStrategyName: "supplierCode",
+                        plType: 1,  //Data.IDENTIFICATION_TYPE.INTERNAL
+                        value: "45665"
                     }
                 ],
+                // Seulement lorsque c'est Product-Live qui vous envoie le message.
+                // Si vous avez besoin de connaitre les ids en base de données
+                // de ce produit dans vos autres systèmes d'informations.
                 nodes: [    // Si il y a plusieurs système, vous récupérez ici tous les ids modèle
                     {
                         idNode: "testNode",
-                        idModel: "8768686" // C'est l'id de ce modèle dans votre système
+                        idModel: "8768686" // C'est l'id de ce modèle le système test node
                     }
                 ]
             },
@@ -375,6 +375,9 @@
                             value: "34543-45-MM"
                         }
                     ],
+                    // Seulement lorsque c'est Product-Live qui vous envoie le message.
+                    // Si vous avez besoin de connaitre les ids en base de données
+                    // de ce produit dans vos autres systèmes d'informations.
                     nodes: [    // Si il y a plusieurs système, vous récupérez ici tous les ids déclinaisons
                         {
                             idNode: "testNode",
@@ -384,48 +387,57 @@
                 }
             ]
         },
-        nodes: [    // Ce sont toutes les informations produit par node
-            {
-                idNode: "testNode", // Le nom du node sur lequel vous agissez
-                families: [ // Ce sont les familles associées
+        data: {
+            families: [ // Ce sont les familles associées
+                {
+                    idName: "homme"
+                }
+            ],
+            model: {
+                marketing: [
                     {
-                        idName: "homme"
+                        idName: "name",
+                        value: "Chaussure de ville"
+                    },
+                    {
+                        idName: "short_description",
+                        value: "Une super chaussure pour la ville."
+                    }
+                ],
+                features: [
+                    {
+                        idName: "main_composition",
+                        value: "wool"
+                    }
+                ],
+                media: [
+                    {
+                        url: "http://....../imgages-1.jpg",
+                        position: "1"
                     }
                 ]
-                model: {
-                    marketing: [
+            },
+            combinations: [
+                {
+                    pivots: [
                         {
-                            idName: "name",
-                            value: "Chaussure de ville"
+                            idName: "color", // c'est l'id en base de cette option dans votre système
+                            value: "red"    // c'est l'id en base de cette valeur dans votre système
                         },
                         {
-                            idName: "short_description",
-                            value: "Une super chaussure pour la ville."
+                            idName: "size", // c'est l'id en base de cette option dans votre système
+                            value: "34" // c'est l'id en base de cette valeur dans votre système
+                        }
+                    ],
+                    media: [
+                        {
+                            url: "http://....../imgages-1.jpg",
+                            position: "1"
                         }
                     ]
-                },
-                combinations: [
-                    {
-                        pivots: [
-                            {
-                                idName: "color",
-                                value: "red"
-                            },
-                            {
-                                idName: "size",
-                                value: "34"
-                            }
-                        ],
-                        features: [
-                            {
-                                idName: "main_composition",
-                                value: "wool"
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
+                }
+            ]
+        }
     }
                     </pre>
                 </div>
