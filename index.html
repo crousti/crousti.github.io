@@ -336,79 +336,81 @@
                     <pre class="prettyprint lang-js">
 
     {
-        identifications: {  // Ce sont toutes les clés d'identification produit
-            model: {
-                idModelPl: "8768768",    // C'est l'id de ce model dans Product-Live
-                identificationsStrategies: [    // Ce sont les différents codes d'identification produits au modèle
-                    {
-                        plStrategyName: "productCode",
-                        plType: 0,  //Data.IDENTIFICATION_TYPE.INTERNAL
-                        value: "34543"
-                    },
-                    {
-                        plStrategyName: "supplierCode",
-                        plType: 1,  //Data.IDENTIFICATION_TYPE.INTERNAL
-                        value: "45665"
-                    }
-                ],
-                // Seulement lorsque c'est Product-Live qui vous envoie le message.
-                // Si vous avez besoin de connaitre les ids en base de données
-                // de ce produit dans vos autres systèmes d'informations.
-                nodes: [    // Si il y a plusieurs système, vous récupérez ici tous les ids modèle
-                    {
-                        idNode: "testNode",
-                        idModel: "8768686" // C'est l'id de ce modèle le système test node
-                    }
-                ]
-            },
-            combinations: [
+        idProductPl: "8768768678",
+        model: {
+            idModelPl: "8768768",    // C'est l'id de ce model dans Product-Live
+            identificationsStrategies: [    // Ce sont les différents codes d'identification produits au modèle
                 {
-                    idCombinationPl: "6757565",   // C'est l'id de cette déclinaison dans Product-Live
-                    identificationsStrategies: [    // Les différents codes d'identification à la déclinaison
-                        {
-                            plStrategyName: "ean",
-                            plType: 0,  //Data.IDENTIFICATION_TYPE.INTERNAL
-                            value: "1765751757765"
-                        },
-                        {
-                            plStrategyName: "sku",
-                            plType: 0,  //Data.IDENTIFICATION_TYPE.INTERNAL
-                            value: "34543-45-MM"
-                        }
-                    ],
-                    // Seulement lorsque c'est Product-Live qui vous envoie le message.
-                    // Si vous avez besoin de connaitre les ids en base de données
-                    // de ce produit dans vos autres systèmes d'informations.
-                    nodes: [    // Si il y a plusieurs système, vous récupérez ici tous les ids déclinaisons
-                        {
-                            idNode: "testNode",
-                            idCombination: "8768686" // C'est l'id de ce déclinaison dans votre système
-                        }
-                    ]
+                    plStrategyName: "productCode",
+                    plType: 0,  //Data.IDENTIFICATION_TYPE.INTERNAL
+                    value: "34543"
+                },
+                {
+                    plStrategyName: "supplierCode",
+                    plType: 1,  //Data.IDENTIFICATION_TYPE.INTERNAL
+                    value: "45665"
                 }
-            ]
-        },
-        data: {
+            ],
             families: [ // Ce sont les familles associées
                 {
                     idName: "homme"
                 }
             ],
-            model: {
-                marketing: [
+            marketing: [
+                {
+                    idName: "name",
+                    value: "Chaussure de ville"
+                },
+                {
+                    idName: "short_description",
+                    value: "Une super chaussure pour la ville."
+                }
+            ],
+            features: [
+                {
+                    idName: "main_composition",
+                    value: "wool"
+                }
+            ],
+            media: [
+                {
+                    url: "http://....../imgages-1.jpg",
+                    position: "1"
+                }
+            ]
+            // Seulement lorsque c'est Product-Live qui vous envoie le message.
+            // Si vous avez besoin de connaitre les ids en base de données
+            // de ce produit dans vos autres systèmes d'informations.
+            nodes: [    // Si il y a plusieurs système, vous récupérez ici tous les ids modèle
+                {
+                    idNode: "testNode",
+                    idModel: "8768686" // C'est l'id de ce modèle le système test node
+                }
+            ]
+        },
+        combinations: [
+            {
+                idCombinationPl: "6757565",   // C'est l'id de cette déclinaison dans Product-Live
+                identificationsStrategies: [    // Les différents codes d'identification à la déclinaison
                     {
-                        idName: "name",
-                        value: "Chaussure de ville"
+                        plStrategyName: "ean",
+                        plType: 0,  //Data.IDENTIFICATION_TYPE.INTERNAL
+                        value: "1765751757765"
                     },
                     {
-                        idName: "short_description",
-                        value: "Une super chaussure pour la ville."
+                        plStrategyName: "sku",
+                        plType: 0,  //Data.IDENTIFICATION_TYPE.INTERNAL
+                        value: "34543-45-MM"
                     }
                 ],
-                features: [
+                pivots: [
                     {
-                        idName: "main_composition",
-                        value: "wool"
+                        idName: "color", // c'est l'id en base de cette option dans votre système
+                        value: "red"    // c'est l'id en base de cette valeur dans votre système
+                    },
+                    {
+                        idName: "size", // c'est l'id en base de cette option dans votre système
+                        value: "34" // c'est l'id en base de cette valeur dans votre système
                     }
                 ],
                 media: [
@@ -417,28 +419,17 @@
                         position: "1"
                     }
                 ]
-            },
-            combinations: [
-                {
-                    pivots: [
-                        {
-                            idName: "color", // c'est l'id en base de cette option dans votre système
-                            value: "red"    // c'est l'id en base de cette valeur dans votre système
-                        },
-                        {
-                            idName: "size", // c'est l'id en base de cette option dans votre système
-                            value: "34" // c'est l'id en base de cette valeur dans votre système
-                        }
-                    ],
-                    media: [
-                        {
-                            url: "http://....../imgages-1.jpg",
-                            position: "1"
-                        }
-                    ]
-                }
-            ]
-        }
+                // Seulement lorsque c'est Product-Live qui vous envoie le message.
+                // Si vous avez besoin de connaitre les ids en base de données
+                // de ce produit dans vos autres systèmes d'informations.
+                nodes: [    // Si il y a plusieurs système, vous récupérez ici tous les ids déclinaisons
+                    {
+                        idNode: "testNode",
+                        idCombination: "8768686" // C'est l'id de ce déclinaison dans votre système
+                    }
+                ]
+            }
+        ]
     }
                     </pre>
                 </div>
