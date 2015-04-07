@@ -374,12 +374,15 @@
                     value: "wool"
                 }
             ],
-            media: [
-                {
-                    url: "http://....../imgages-1.jpg",
-                    position: "1"
-                }
-            ]
+            media: {
+                images : [
+                    {
+                        idName: "344",  // C'est l'id de votre image en base.
+                        url: "http://....../imgages-1.jpg", // Url de l'image haute définition.
+                        position: "1"   // La position de l'image.
+                    }
+                ]
+            }
             // Seulement lorsque c'est Product-Live qui vous envoie le message.
             // Si vous avez besoin de connaitre les ids en base de données
             // de ce produit dans vos autres systèmes d'informations.
@@ -416,12 +419,13 @@
                         value: "34" // c'est l'id en base de cette valeur dans votre système
                     }
                 ],
-                media: [
-                    {
-                        url: "http://....../imgages-1.jpg",
-                        position: "1"
-                    }
-                ]
+                media: {
+                    images: [
+                        {
+                            idName: "344"   // L'id de l'image associée.
+                        }
+                    ]
+                }
                 // Seulement lorsque c'est Product-Live qui vous envoie le message.
                 // Si vous avez besoin de connaitre les ids en base de données
                 // de ce produit dans vos autres systèmes d'informations.
