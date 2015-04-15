@@ -361,17 +361,33 @@
             marketing: [
                 {
                     idName: "name",
-                    value: "Chaussure de ville"
+                    values: [
+                        {
+                            value: "Chaussure de ville",
+                            lang: 4 //Enum Data.LANG.FR
+                        }
+                    ]
                 },
                 {
                     idName: "short_description",
-                    value: "Une super chaussure pour la ville."
+                    values: [
+                        {
+                            value: "Une super chaussure de ville.",
+                            lang: 4 //Enum Data.LANG.FR
+                        }
+                    ]
                 }
             ],
             features: [
                 {
                     idName: "main_composition",
-                    value: "wool"
+                    valueCode: "wool",
+                    values: [
+                        {
+                            value: "Laine",
+                            lang: 4
+                        }
+                    ]
                 }
             ],
             media: {
@@ -412,11 +428,23 @@
                 pivots: [
                     {
                         idName: "color", // c'est l'id en base de cette option dans votre système
-                        value: "red"    // c'est l'id en base de cette valeur dans votre système
+                        valueCode: "red",
+                        values: [
+                            {
+                                value: "Rouge",
+                                lang: 4
+                            }
+                        ]
                     },
                     {
                         idName: "size", // c'est l'id en base de cette option dans votre système
-                        value: "34" // c'est l'id en base de cette valeur dans votre système
+                        valueCode: "34",
+                        values: [
+                            {
+                                value: "34",
+                                lang: 4
+                            }
+                        ]
                     }
                 ],
                 media: {
