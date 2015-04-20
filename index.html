@@ -486,6 +486,16 @@
     {
         success: "0",   // 1 le produit a été correctement mis à jour, 0 il y a eu une erreur
         date: "9789878979789",  // timestamp
+        product: {
+            model: {
+                idModel: "765765",  // l'id du modèle mis à jour ou cré dans votre base
+            },
+            combinations: [
+                {
+                    idCombination: "86876"  // l'id de la déclinaison mis à jour ou créé dans votre base
+                }
+            ]
+        }
         error: [
             {
                 code: 3,          // Enum Data.error.
