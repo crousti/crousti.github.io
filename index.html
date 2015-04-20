@@ -81,9 +81,8 @@
                 <p>
                     Un node est l'image dans Product-Live d'un de vos systèmes d'informations.<br>Il peut représenter un <b>ERP</b>, un <b>PLM</b>, un <b>site web</b>, une <b>marketplace</b> ou <b>n'importe quel outil</b> dans lequel vous stocker de la donnée produit.
                 </p>
-                <h2>5 flux à mapper par node</h2>
+                <h2>5 messages à créer par node</h2>
                 <p>
-                    Chaque node est composé de 4 flux. Les 4 flux sont les suivants:
                     <ul>
                         <li>Matrix</li>
                         <li>Families</li>
@@ -91,11 +90,11 @@
                         <li>Products</li>
                         <li>Acquittal</li>
                     </ul>
-                    Les flux sont envoyés au Service Bus sous forme de message au format <b>JSON</b>.
+                    Les messages sont envoyés au Service Bus au format <b>JSON</b>.
                 </p>
-                <h2>Le flux "Matrix"</h2>
+                <h2>Le message "Matrix"</h2>
                 <p>
-                    Le flux <b>matrix</b> représente la <b>structuration de vos données dans votre système</b> c'est à dire les attributs produits de votre système. Ce message doit uniquement être transmis à l'initialisation puis chaque fois que vous modifiez la structure de votre système.
+                    Le message <b>matrix</b> représente la <b>structuration de vos données dans votre système</b> c'est à dire les attributs produits de votre système. Ce message doit uniquement être transmis à l'initialisation puis chaque fois que vous modifiez la structure de votre système.
                     Le message standard à transmettre est de ce type :
                 </p><button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#matrixCollapse" aria-expanded="false" aria-controls="matrixCollapse" style="float: right;margin-left: 10px;">
                     Afficher / Cacher message standard
@@ -242,9 +241,9 @@
     }
                     </pre>
                 </div>
-                <h2>Le flux "Families"</h2>
+                <h2>Le message "Families"</h2>
                 <p>
-                    Le flux <b>families</b> représente les <b>catégories et les caratctéristiques associées</b> de votre système.
+                    Le message <b>families</b> représente les <b>catégories et les caratctéristiques associées</b> de votre système.
                     C'est généralement le menu de votre site web ou votre thésorus. Pour les caractéristiques associées vous pouvez ici rendre obligatoire une caractéristique pour une catégorie donnée. Vous pouvez également vous servir de l'interfaçe pour faire ce lien.
                     <br>
                     Ce message doit uniquement être transmis à l'initialisation puis chaque fois que vous modifiez la structure de votre système.
@@ -278,7 +277,7 @@
                     }
                 ],
                 features: [ // Pour chaque famille on peut associer des caractéristiques
-                    idName: "main_composition", // Cet id doit correspondre à celui définit dans le flux matrix
+                    idName: "main_composition", // Cet id doit correspondre à celui définit dans le message matrix
                     mandatory: true  // true pour obligatoire, false pour facultatif
                 ]
             }
@@ -286,9 +285,9 @@
     }
                     </pre>
                 </div>
-                <h2>Le flux "Contacts"</h2>
+                <h2>Le message "Contacts"</h2>
                 <p>
-                    Le flux <b>contacts</b> représente <b>un fournisseur, une marque ou un distributeur</b>.
+                    Le message <b>contacts</b> représente <b>un fournisseur, une marque ou un distributeur</b>.
                     <br>
                     Ce message doit uniquement être transmis à l'initialisation puis chaque fois que vous modifiez la structure de votre système.
                     Le message standard à transmettre est le suivant :
@@ -323,9 +322,9 @@
                     </pre>
                 </div>
 
-                <h2>Le flux "Product"</h2>
+                <h2>Le message "Product"</h2>
                 <p>
-                    Le flux <b>product</b> représente <b>un produit d'un de vos système</b>.
+                    Le message <b>product</b> représente <b>un produit d'un de vos système</b>.
                     <br>
                     Ce type de message est à envoyer à chaque fois qu'un produit est modifié sur votre système.
                     Le message standard à transmettre est le suivant :
@@ -470,9 +469,9 @@
                     </pre>
                 </div>
 
-                <h2>Le flux "Acquittal"</h2>
+                <h2>Le message "Acquittal"</h2>
                 <p>
-                    Le flux <b>acquittal</b> représente <b>l'acquittement de la création ou de la mise à jour du produit</b>.
+                    Le message <b>acquittal</b> représente <b>l'acquittement de la création ou de la mise à jour du produit</b>.
                     <br>
                     Ce type de message est à renvoyer à chaque fois qu'un produit est modifié sur votre système.
                     Le message standard à transmettre est le suivant :
@@ -514,7 +513,7 @@
                     Un message est représenté par :
                     <ul>
                         <li>Un "topic" qui est le sujet auquel vous souhaitez envoyer le message.</li>
-                        <li>Un corps de message, c'est le flux présenté précédemment.</li>
+                        <li>Un corps de message, c'est le message présenté précédemment.</li>
                         <li>Un ensemble de clés valeurs qui vont permettre de filtrer simplement les messages.</li>
                     </ul>
                 </p>
