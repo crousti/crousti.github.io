@@ -468,6 +468,34 @@
     }
                     </pre>
                 </div>
+
+                <h2>Le flux "Acquittal"</h2>
+                <p>
+                    Le flux <b>acquittal</b> représente <b>l'acquittement de la création ou de la mise à jour du produit</b>.
+                    <br>
+                    Ce type de message est à renvoyer à chaque fois qu'un produit est modifié sur votre système.
+                    Le message standard à transmettre est le suivant :
+                </p>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#acquittalCollapse" aria-expanded="false" aria-controls="acquittalCollapse" style="float: right;margin-left: 10px;">
+                    Afficher / Cacher message standard
+                </button>
+                <div class="collapse" id="acquittalCollapse">
+                    <pre class="prettyprint lang-js">
+
+    {
+        success: "0",   // 1 le produit a été correctement mis à jour, 0 il y a eu une erreur
+        date: "9789878979789",  // timestamp
+        error: [
+            {
+                code: 3,          // Enum Data.error.
+            }
+        ],
+        message-id: "88968676", // l'id du message traité
+        type: 3  // Si le traitement d'un produit est très long Enum Data.Acquittal.start puis Data.Acquittal.progression
+                 // Si le traitement est terminé Enum Data.Acquittal.end
+    }
+                    </pre>
+                </div>
                 <h2>Envoie et récéption de messages</h2>
                 <p>
                     Product-Live vous fournit un wrapper par language pour vous faciliter la communication avec le Service Bus.<br>
