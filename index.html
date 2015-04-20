@@ -322,9 +322,9 @@
                     </pre>
                 </div>
 
-                <h2>Le message "Product"</h2>
+                <h2>Le message "Products"</h2>
                 <p>
-                    Le message <b>product</b> représente <b>un produit d'un de vos système</b>.
+                    Le message <b>products</b> représente <b>un produit d'un de vos système</b>.
                     <br>
                     Ce type de message est à envoyer à chaque fois qu'un produit est modifié sur votre système.
                     Le message standard à transmettre est le suivant :
@@ -335,137 +335,139 @@
                 <div class="collapse" id="productCollapse">
                     <pre class="prettyprint lang-js">
 
-    {
-        idProductPl: "8768768678",
-        active: "0",   // C'est l'état d'activation du produit 0 / 1
-        model: {
-            idModelPl: "8768768",    // C'est l'id de ce model dans Product-Live
-            idModel: "6564646454",   // C'est l'id de ce model dans votre système d'information
-            identificationsStrategies: [    // Ce sont les différents codes d'identification produits au modèle
-                {
-                    plStrategyName: "productCode",
-                    plType: 0,  //Data.IDENTIFICATION_TYPE.INTERNAL
-                    value: "34543"
-                },
-                {
-                    plStrategyName: "supplierCode",
-                    plType: 1,  //Data.IDENTIFICATION_TYPE.INTERNAL
-                    value: "45665"
-                }
-            ],
-            families: [ // Ce sont les familles associées
-                {
-                    idName: "homme"
-                }
-            ],
-            marketing: [
-                {
-                    idName: "name",
-                    values: [
-                        {
-                            value: "Chaussure de ville",
-                            lang: 4 //Enum Data.LANG.FR
-                        }
-                    ]
-                },
-                {
-                    idName: "short_description",
-                    values: [
-                        {
-                            value: "Une super chaussure de ville.",
-                            lang: 4 //Enum Data.LANG.FR
-                        }
-                    ]
-                }
-            ],
-            features: [
-                {
-                    idName: "main_composition",
-                    values: [
-                        {
-                            valueCode: "wool",
-                            value: "Laine",
-                            lang: 4
-                        }
-                    ]
-                }
-            ],
-            media: {
-                images : [
+    [
+        {
+            idProductPl: "8768768678",
+            active: "0",   // C'est l'état d'activation du produit 0 / 1
+            model: {
+                idModelPl: "8768768",    // C'est l'id de ce model dans Product-Live
+                idModel: "6564646454",   // C'est l'id de ce model dans votre système d'information
+                identificationsStrategies: [    // Ce sont les différents codes d'identification produits au modèle
                     {
-                        idName: "344",  // C'est l'id de votre image en base.
-                        url: "http://....../imgages-1.jpg", // Url de l'image haute définition.
-                        position: "1"   // La position de l'image.
-                    }
-                ]
-            }
-            // Seulement lorsque c'est Product-Live qui vous envoie le message.
-            // Si vous avez besoin de connaitre les ids en base de données
-            // de ce produit dans vos autres systèmes d'informations.
-            nodes: [    // Si il y a plusieurs système, vous récupérez ici tous les ids modèle
-                {
-                    idNode: "testNode",
-                    idModel: "8768686" // C'est l'id de ce modèle le système test node
-                }
-            ]
-        },
-        combinations: [
-            {
-                idCombinationPl: "6757565",   // C'est l'id de cette déclinaison dans Product-Live
-                idCombination: "5646564",     // C'est l'id de cette combinaison dans votre système d'information
-                identificationsStrategies: [    // Les différents codes d'identification à la déclinaison
-                    {
-                        plStrategyName: "ean",
+                        plStrategyName: "productCode",
                         plType: 0,  //Data.IDENTIFICATION_TYPE.INTERNAL
-                        value: "1765751757765"
+                        value: "34543"
                     },
                     {
-                        plStrategyName: "sku",
-                        plType: 0,  //Data.IDENTIFICATION_TYPE.INTERNAL
-                        value: "34543-45-MM"
+                        plStrategyName: "supplierCode",
+                        plType: 1,  //Data.IDENTIFICATION_TYPE.INTERNAL
+                        value: "45665"
                     }
                 ],
-                pivots: [
+                families: [ // Ce sont les familles associées
                     {
-                        idName: "color", // c'est l'id en base de cette option dans votre système
+                        idName: "homme"
+                    }
+                ],
+                marketing: [
+                    {
+                        idName: "name",
                         values: [
                             {
-                                valueCode: "red",
-                                value: "Rouge",
-                                lang: 4
+                                value: "Chaussure de ville",
+                                lang: 4 //Enum Data.LANG.FR
                             }
                         ]
                     },
                     {
-                        idName: "size", // c'est l'id en base de cette option dans votre système
+                        idName: "short_description",
                         values: [
                             {
-                                valueCode: "34",
-                                value: "34",
+                                value: "Une super chaussure de ville.",
+                                lang: 4 //Enum Data.LANG.FR
+                            }
+                        ]
+                    }
+                ],
+                features: [
+                    {
+                        idName: "main_composition",
+                        values: [
+                            {
+                                valueCode: "wool",
+                                value: "Laine",
                                 lang: 4
                             }
                         ]
                     }
                 ],
                 media: {
-                    images: [
+                    images : [
                         {
-                            idName: "344"   // L'id de l'image associée.
+                            idName: "344",  // C'est l'id de votre image en base.
+                            url: "http://....../imgages-1.jpg", // Url de l'image haute définition.
+                            position: "1"   // La position de l'image.
                         }
                     ]
                 }
                 // Seulement lorsque c'est Product-Live qui vous envoie le message.
                 // Si vous avez besoin de connaitre les ids en base de données
                 // de ce produit dans vos autres systèmes d'informations.
-                nodes: [    // Si il y a plusieurs système, vous récupérez ici tous les ids déclinaisons
+                nodes: [    // Si il y a plusieurs système, vous récupérez ici tous les ids modèle
                     {
                         idNode: "testNode",
-                        idCombination: "8768686" // C'est l'id de ce déclinaison dans votre système
+                        idModel: "8768686" // C'est l'id de ce modèle le système test node
                     }
                 ]
-            }
-        ]
-    }
+            },
+            combinations: [
+                {
+                    idCombinationPl: "6757565",   // C'est l'id de cette déclinaison dans Product-Live
+                    idCombination: "5646564",     // C'est l'id de cette combinaison dans votre système d'information
+                    identificationsStrategies: [    // Les différents codes d'identification à la déclinaison
+                        {
+                            plStrategyName: "ean",
+                            plType: 0,  //Data.IDENTIFICATION_TYPE.INTERNAL
+                            value: "1765751757765"
+                        },
+                        {
+                            plStrategyName: "sku",
+                            plType: 0,  //Data.IDENTIFICATION_TYPE.INTERNAL
+                            value: "34543-45-MM"
+                        }
+                    ],
+                    pivots: [
+                        {
+                            idName: "color", // c'est l'id en base de cette option dans votre système
+                            values: [
+                                {
+                                    valueCode: "red",
+                                    value: "Rouge",
+                                    lang: 4
+                                }
+                            ]
+                        },
+                        {
+                            idName: "size", // c'est l'id en base de cette option dans votre système
+                            values: [
+                                {
+                                    valueCode: "34",
+                                    value: "34",
+                                    lang: 4
+                                }
+                            ]
+                        }
+                    ],
+                    media: {
+                        images: [
+                            {
+                                idName: "344"   // L'id de l'image associée.
+                            }
+                        ]
+                    }
+                    // Seulement lorsque c'est Product-Live qui vous envoie le message.
+                    // Si vous avez besoin de connaitre les ids en base de données
+                    // de ce produit dans vos autres systèmes d'informations.
+                    nodes: [    // Si il y a plusieurs système, vous récupérez ici tous les ids déclinaisons
+                        {
+                            idNode: "testNode",
+                            idCombination: "8768686" // C'est l'id de ce déclinaison dans votre système
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
                     </pre>
                 </div>
 
