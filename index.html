@@ -73,16 +73,26 @@
             <div class="page-header">
                 <h1>Gestion du système point à point</h1>
             </div>
-            <div style="width: 100%; text-align: center;">
-                <img src="images/bus.jpg"/>
-            </div>
             <div>
                 <h2>Les nodes</h2>
+                <img src="images/bus.jpg"/>
                 <p>
-                    Un node est l'image dans Product-Live d'un de vos systèmes d'informations.<br>Il peut représenter un <b>ERP</b>, un <b>PLM</b>, un <b>site web</b>, une <b>marketplace</b> ou <b>n'importe quel outil</b> dans lequel vous stocker de la donnée produit.
+                    <br>Un node est l'image dans Product-Live d'un de vos systèmes d'informations.<br>Il peut représenter un <b>ERP</b>, un <b>PLM</b>, un <b>site web</b>, une <b>marketplace</b> ou <b>n'importe quel outil</b> dans lequel vous stocker de la donnée produit.
                 </p>
-                <h2>5 messages à créer par node</h2>
+                <h2>Les flux d'échanges de données</h2>
+                <img src="images/messages.jpg">
+                <p><br>Sur Product-Live vous échangez en premier lieux votre <b>taxonomie</b>. La taxonomie représente la manière dont est structurée l'information produit dans votre
+                    système d'information. Elle représente donc les attributs de type marketing : "titre", "description", les attributs de type caractéristique "largeur", "hauteur", les
+                    attributs de type pivots "couleur", "taille" (si votre système gère les déclinaisons), les catégories et bien d'autres. Tous ces attributs sont dans le référentiel de votre outil.
+                    <br>
+                    Dans le <b>cas particulier où votre outil est une marketplace</b>, vous n'avez pas de flux produits de votre outil vers Product-Live.
+                </p>
+                <h2>5 messages par node</h2>
                 <p>
+                    Pour échanger ces données, Product Live utilise un serveur de message sur lequel nous avons formaté les formats d'échange.
+                    <br>
+                    Le flux taxonomie est représenté par 2 messages, les messages Matrix et Families.
+
                     <ul>
                         <li>Matrix</li>
                         <li>Families</li>
@@ -241,7 +251,9 @@
         ]
     }
                     </pre>
+
                 </div>
+                <br>
                 <h2>Le message "Families"</h2>
                 <p>
                     Le message <b>families</b> représente les <b>catégories et les caratctéristiques associées</b> de votre système.
@@ -287,6 +299,7 @@
     }
                     </pre>
                 </div>
+                <br>
                 <h2>Le message "Contacts"</h2>
                 <p>
                     Le message <b>contacts</b> représente <b>un fournisseur, une marque ou un distributeur</b>.
@@ -324,8 +337,9 @@
     }
                     </pre>
                 </div>
-
+                <br>
                 <h2>Le message "Products"</h2>
+
                 <p>
                     Le message <b>products</b> représente <b>un produit d'un de vos système</b>.
                     <br>
@@ -474,7 +488,7 @@
     ]
                     </pre>
                 </div>
-
+                <br>
                 <h2>Le message "Acquittal"</h2>
                 <p>
                     Le message <b>acquittal</b> représente <b>l'acquittement de la création ou de la mise à jour du produit</b>.
@@ -516,15 +530,58 @@
     }
                     </pre>
                 </div>
-                <h2>Envoie et récéption de messages</h2>
+                <br>
+                <h2>Envoyer et récéptionner des messages</h2>
                 <p>
-                    Product-Live vous fournit un wrapper par language pour vous faciliter la communication avec le Service Bus.<br>
-                    Un message est représenté par :
-                    <ul>
-                        <li>Un "topic" qui est le sujet auquel vous souhaitez envoyer le message.</li>
-                        <li>Un corps de message, c'est le message présenté précédemment.</li>
-                        <li>Un ensemble de clés valeurs qui vont permettre de filtrer simplement les messages.</li>
-                    </ul>
+                    Product-Live vous Permet de vous connecter quel que soit votre système d'information.<br>
+                    <h3>Les CMS</h3>
+                    <div class="media">
+                        <div class="media-left media-middle">
+                            <a href="#">
+                                <img class="media-object" src="images/prestashop.jpg">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Prestashop</h4>
+                            Cliquez <a>ici</a> pour télécharger et installer le module Prestashop.
+                        </div>
+                    </div>
+                    <br>
+                    <div class="media">
+                        <div class="media-left media-middle">
+                            <a href="#">
+                                <img class="media-object" src="images/magento.jpg">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Magento</h4>
+                            Cliquez <a>ici</a> pour télécharger et installer le module Magento.
+                        </div>
+                    </div>
+                    <br>
+                    <div class="media">
+                        <div class="media-left media-middle">
+                            <a href="#">
+                                <img class="media-object" src="images/drupal.jpg">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Drupal</h4>
+                            Cliquez <a>ici</a> pour télécharger et installer le module Drupal.
+                        </div>
+                    </div>
+                    <br>
+                    <div class="media">
+                        <div class="media-left media-middle">
+                            <a href="#">
+                                <img class="media-object" src="images/php.jpg">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">PHP sur mesure</h4>
+                            Cliquez <a>ici</a> pour télécharger le wrapper PHP et suivre le tutoriel d'installation.
+                        </div>
+                    </div>
                 </p>
             </div>
             <div class="page-header">
