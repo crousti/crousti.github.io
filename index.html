@@ -79,9 +79,9 @@
                     <img src="images/bus.jpg"/>
                 </div>
                 <p>
-                    <br>Un node est l'image dans Product-Live d'un de vos systèmes d'informations.<br>Il peut représenter un <b>ERP</b>, un <b>PLM</b>, un <b>site web</b>, une <b>marketplace</b> ou <b>n'importe quel outil</b> dans lequel vous stocker de la donnée produit.
+                    <br>Un node est l'image dans Product-Live d'un de vos systèmes d'informations.<br>Il peut représenter un <b>ERP</b>, un <b>PLM</b>, un <b>site web</b>, une <b>marketplace</b> ou <b>n'importe quel outil</b> dans lequel vous stocker de la donnée produit ou dans lequel vous souhaitez collecter de la donnée produit.
                 </p>
-                <h2>Les flux d'échanges de données</h2>
+                <h2>Les flux d'échanges de données pour chaque node</h2>
                 <div style="width: 100%; text-align: center;">
                     <img src="images/messages.jpg">
                 </div>
@@ -416,6 +416,7 @@
                 media: {
                     images : [
                         {
+                            idPl: "87686876",   // C'est l'id dans Product-Live
                             idName: "344",  // C'est l'id de votre image en base.
                             url: "http://....../imgages-1.jpg", // Url de l'image haute définition.
                             position: "1"   // La position de l'image.
@@ -513,7 +514,13 @@
         product: {
             model: {
                 idModelPl: "987897",   // C'est l'id de ce modèle dans Product-Live
-                idModel: "765765",  // l'id du modèle mis à jour ou cré dans votre base
+                idModel: "765765",  // l'id du modèle mis à jour ou cré dans votre base,
+                media: {
+                    [
+                        idPl: "98798799",   // C'est l'id de cette image dans Product-Live
+                        idName: "778678"    // C'est l'id de cette image dans votre système
+                    ]
+                }
             },
             combinations: [
                 {
@@ -522,7 +529,7 @@
                 }
             ]
         }
-        error: [
+        errors: [
             {
                 code: 3,          // Enum Data.error.
                 additionalInformation: "Ce que vous souhaitez écrire sur l'erreur."
@@ -535,7 +542,12 @@
                     </pre>
                 </div>
                 <br>
-                <h2>Envoyer et récéptionner des messages</h2>
+                <h2>Envoyer des messages de votre outil vers Product-Live</h2>
+                <div style="width: 100%;text-align: center;">
+                    <img src="images/message.jpg">
+                </div>
+                <h2>Recevoir des message de Product-Live vers votre outil</h2>
+                <h2>Les connecteurs</h2>
                 <p>
                     Product-Live vous Permet de vous connecter quel que soit votre système d'information.<br>
                     <h3>Les CMS</h3>
@@ -586,7 +598,15 @@
                             Cliquez <a>ici</a> pour télécharger le wrapper PHP et suivre le tutoriel d'installation.
                         </div>
                     </div>
+                    <br>
+                    <h3>Les ERP / PLM</h3>
+                    <p>
+                        L'ERP est généralement le master en terme de réferentiel produit. Product-Live ne change pas ce comportement.<br>
+                        Il nous suffit donc de récupérer des exports périodique des référentiels produits avec le minimum de données sauf si votre ERP gère également de la donnée marketing.<br>
+                    </p>
+
                 </p>
+                <h2>Vous êtes une marketplace</h2>
             </div>
             <div class="page-header">
                 <h1>Connexion à l'aide de PHP <small>Objectif 30 minutes par Node.</small></h1>
