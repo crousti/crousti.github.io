@@ -1,0 +1,23 @@
+{
+  "name": "DocumentationV3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@material-ui/core": "^4.5.0",
+    "@material-ui/icons": "^4.4.3",
+    "next": "^9.1.1",
+    "now": "^16.3.1",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-xml-viewer": "^1.0.3"
+  }
+}

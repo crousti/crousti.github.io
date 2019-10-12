@@ -1,0 +1,1 @@
+{"ast":null,"code":"var __jsx = React.createElement;\n// import Layout from \"../components/Layout\";\nimport React from \"react\"; // const IndexPage = () => <Layout>Welcome to world Product-Live!</Layout>;\n\nconst IndexPage = props => __jsx(\"div\", null, __jsx(\"p\", null, \"Home \"));\n\nexport default IndexPage;","map":null,"metadata":{},"sourceType":"module"}
