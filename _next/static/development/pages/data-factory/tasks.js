@@ -16160,10 +16160,10 @@ var index = create();
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fdata-factory%2Ftasks&absolutePagePath=C%3A%5CUsers%5Cbertr%5CDev%5CDocumentationV3%5Cpages%5Cdata-factory%5Ctasks.js!./":
-/*!***************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fdata-factory%2Ftasks&absolutePagePath=C%3A%5CUsers%5Cbertr%5CDev%5CDocumentationV3%5Cpages%5Cdata-factory%5Ctasks.js ***!
-  \***************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fdata-factory%2Ftasks&absolutePagePath=C%3A%5CUsers%5Cbertr%5CDev%5Chelp-center-v3%5Cpages%5Cdata-factory%5Ctasks.js!./":
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fdata-factory%2Ftasks&absolutePagePath=C%3A%5CUsers%5Cbertr%5CDev%5Chelp-center-v3%5Cpages%5Cdata-factory%5Ctasks.js ***!
+  \**************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -23733,7 +23733,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_12__);
-var _jsxFileName = "C:\\Users\\bertr\\Dev\\DocumentationV3\\pages\\data-factory\\tasks.js";
+var _jsxFileName = "C:\\Users\\bertr\\Dev\\help-center-v3\\pages\\data-factory\\tasks.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -23755,7 +23755,7 @@ var styles = function styles(theme) {
       flexGrow: 1
     },
     card: {
-      maxWidth: 300
+      minHeight: 160
     },
     media: {
       height: 140
@@ -23764,25 +23764,50 @@ var styles = function styles(theme) {
 };
 
 var tasks = [{
+  "displayName": "Tables and items",
+  "tasks": [{
+    "key": "import-table",
+    "displayName": "Import Table",
+    "description": "Import a table structure.",
+    "link": "/data-factory/tasks/import-table"
+  }, {
+    "key": "export-table",
+    "displayName": "Export Table",
+    "description": "Export a table structure.",
+    "link": "/data-factory/tasks/export-table"
+  }, {
+    "key": "import-items",
+    "displayName": "Import Items",
+    "description": "Import items to a table.",
+    "link": "/data-factory/tasks/import-items"
+  }, {
+    "key": "export-items",
+    "displayName": "Export Items",
+    "description": "Export items from a table.",
+    "link": "/data-factory/tasks/export-items"
+  }]
+}, {
   "displayName": "FTP",
   "tasks": [{
     "key": "ftp-list",
     "displayName": "FTP List",
     "description": "List all files on a sFTP/FTP server.",
-    "image": "/data-factory/tasks/spreadsheet.png",
     "link": "/data-factory/tasks/ftp-list"
   }, {
     "key": "ftp-get",
     "displayName": "FTP Get",
     "description": "Get one file on a sFTP/FTP server.",
-    "image": "/data-factory/tasks/spreadsheet.png",
     "link": "/data-factory/tasks/ftp-get"
   }, {
     "key": "ftp-post",
     "displayName": "FTP Post",
     "description": "Post files on a sFTP/FTP server.",
-    "image": "/data-factory/tasks/spreadsheet.png",
     "link": "/data-factory/tasks/ftp-post"
+  }, {
+    "key": "ftp-move",
+    "displayName": "FTP Move",
+    "description": "Move one file on a sFTP/FTP server.",
+    "link": "/data-factory/tasks/ftp-move"
   }]
 }, {
   "displayName": "Generate files",
@@ -23790,20 +23815,48 @@ var tasks = [{
     "key": "generate-excel",
     "displayName": "Generate Excel",
     "description": "Generate one or many Excel files.",
-    "image": "/data-factory/tasks/spreadsheet.png",
     "link": "/data-factory/tasks/generate-excel"
   }, {
     "key": "generate-pdf",
     "displayName": "Generate PDF",
-    "description": "Get one or many PDF files",
-    "image": "/data-factory/tasks/pdf.png",
+    "description": "Generate one or many PDF files",
     "link": "/data-factory/tasks/generate-pdf"
   }, {
-    "key": "generate-csv",
-    "displayName": "Generate CSV",
-    "description": "Generate a CSV file.",
-    "image": "/data-factory/tasks/spreadsheet.png",
+    "key": "generate-email",
+    "displayName": "Generate Email",
+    "description": "Send one or many emails programmatically.",
     "link": "/data-factory/tasks/generate-csv"
+  }]
+}, {
+  "displayName": "Transform files to XML",
+  "tasks": [{
+    "key": "xlsx-to-xml",
+    "displayName": "XLSX to XML",
+    "description": "Transform a .xslx file to a .xml file",
+    "link": "/data-factory/tasks/xslx-to-xml"
+  }, {
+    "key": "csv-to-xml",
+    "displayName": "CSV to XML",
+    "description": "Transform a .csv file to a .xml file",
+    "link": "/data-factory/tasks/csv-to-xml"
+  }, {
+    "key": "txt-to-xml",
+    "displayName": "TXT to XML",
+    "description": "Transform a .txt file to a .xml file",
+    "link": "/data-factory/tasks/txt-to-xml"
+  }]
+}, {
+  "displayName": "Zip/Unzip archives",
+  "tasks": [{
+    "key": "zip",
+    "displayName": "Zip",
+    "description": "Compress files and folders to a Zip file.",
+    "link": "/data-factory/tasks/zip"
+  }, {
+    "key": "unzip",
+    "displayName": "Unzip",
+    "description": "Unzip files and folders from a Zip file.",
+    "link": "/data-factory/tasks/unzip"
   }]
 }];
 
@@ -23813,14 +23866,14 @@ function Tasks(props) {
     className: classes.root,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 156
     },
     __self: this
   }, __jsx(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_3__["default"], {
     maxWidth: "md",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 157
     },
     __self: this
   }, tasks.map(function (groupTask, index) {
@@ -23828,7 +23881,7 @@ function Tasks(props) {
       key: index,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 90
+        lineNumber: 159
       },
       __self: this
     }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -23836,7 +23889,7 @@ function Tasks(props) {
       gutterBottom: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 91
+        lineNumber: 160
       },
       __self: this
     }, groupTask.displayName), __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -23844,51 +23897,43 @@ function Tasks(props) {
       spacing: 3,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 94
+        lineNumber: 163
       },
       __self: this
     }, groupTask.tasks.map(function (task, idx) {
       return __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__["default"], {
         item: true,
-        xs: 4,
+        sm: 3,
         key: task.key,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 165
         },
         __self: this
       }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_12___default.a, {
         href: task.link,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 97
+          lineNumber: 166
         },
         __self: this
       }, __jsx(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_5__["default"], {
         className: classes.card,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 98
+          lineNumber: 167
         },
         __self: this
       }, __jsx(_material_ui_core_CardActionArea__WEBPACK_IMPORTED_MODULE_6__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 99
+          lineNumber: 168
         },
         __self: this
-      }, __jsx(_material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_9__["default"], {
-        className: classes.media,
-        image: task.image,
+      }, __jsx(_material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_8__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 100
-        },
-        __self: this
-      }), __jsx(_material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_8__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 104
+          lineNumber: 173
         },
         __self: this
       }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -23897,7 +23942,7 @@ function Tasks(props) {
         component: "h2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 105
+          lineNumber: 174
         },
         __self: this
       }, task.displayName), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -23906,13 +23951,13 @@ function Tasks(props) {
         component: "p",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 108
+          lineNumber: 177
         },
         __self: this
       }, task.description))), __jsx(_material_ui_core_CardActions__WEBPACK_IMPORTED_MODULE_7__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 113
+          lineNumber: 182
         },
         __self: this
       }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -23920,20 +23965,26 @@ function Tasks(props) {
         color: "primary",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 114
+          lineNumber: 183
         },
         __self: this
       }, "Learn More")))));
     })), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 123
+        lineNumber: 192
       },
       __self: this
     }), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 124
+        lineNumber: 193
+      },
+      __self: this
+    }), __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 194
       },
       __self: this
     }));
@@ -23947,14 +23998,14 @@ Tasks.propTypes = {
 
 /***/ }),
 
-/***/ 0:
-/*!*******************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fdata-factory%2Ftasks&absolutePagePath=C%3A%5CUsers%5Cbertr%5CDev%5CDocumentationV3%5Cpages%5Cdata-factory%5Ctasks.js ***!
-  \*******************************************************************************************************************************************************************/
+/***/ 2:
+/*!******************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fdata-factory%2Ftasks&absolutePagePath=C%3A%5CUsers%5Cbertr%5CDev%5Chelp-center-v3%5Cpages%5Cdata-factory%5Ctasks.js ***!
+  \******************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fdata-factory%2Ftasks&absolutePagePath=C%3A%5CUsers%5Cbertr%5CDev%5CDocumentationV3%5Cpages%5Cdata-factory%5Ctasks.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fdata-factory%2Ftasks&absolutePagePath=C%3A%5CUsers%5Cbertr%5CDev%5CDocumentationV3%5Cpages%5Cdata-factory%5Ctasks.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fdata-factory%2Ftasks&absolutePagePath=C%3A%5CUsers%5Cbertr%5CDev%5Chelp-center-v3%5Cpages%5Cdata-factory%5Ctasks.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fdata-factory%2Ftasks&absolutePagePath=C%3A%5CUsers%5Cbertr%5CDev%5Chelp-center-v3%5Cpages%5Cdata-factory%5Ctasks.js!./");
 
 
 /***/ }),
@@ -23970,5 +24021,5 @@ module.exports = dll_13346faca0e924a89b24;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=tasks.js.map
