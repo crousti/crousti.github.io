@@ -1,0 +1,35 @@
+.compare-view {
+  background: #fbfbfb;
+  .container {
+    width: calc(100% - 150px);
+    overflow-x: scroll;
+    overflow-y: visible;
+    margin-left: 150px;
+    padding: 0;
+    height: 100%;
+    border-left: 1px solid #dadada;
+    background: white;
+  }
+
+  .price {
+    color: @secondary-color;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+  td,
+  th {
+    margin: 0;
+    border-top: 1px solid #dadada;
+    padding: 5px;
+    vertical-align: top;
+  }
+  .headcol {
+    position: absolute;
+    width: 150px;
+    left: 0;
+    top: auto;
+    padding-left: 16px;
+  }
+}
